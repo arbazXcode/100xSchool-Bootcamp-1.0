@@ -1,8 +1,8 @@
-# 100xSchool Bootcamp 1.0 🚀
+# 100xSchool Bootcamp 1.0
 
 This repository documents my **6–7 month Full Stack Web Development + DevOps journey**.
 
-## 📌 What this repo contains
+## What this repo contains
 
 - Daily learning notes
 - Hands-on practice
@@ -10,7 +10,7 @@ This repository documents my **6–7 month Full Stack Web Development + DevOps j
 - DevOps workflows
 - Interview preparation
 
-## 🧠 Tech Stack
+## Tech Stack
 
 - HTML, CSS, JavaScript
 - React
@@ -18,14 +18,14 @@ This repository documents my **6–7 month Full Stack Web Development + DevOps j
 - MongoDB, PostgreSQL
 - Docker, CI/CD, Cloud
 
-## 🎯 Goal
+## Goal
 
 To become a **job-ready Full Stack + DevOps Engineer** with strong proof of work.
 
-## 📅 Duration
+## Duration
 
 6–7 months (Daily tracked progress)
 
-## 📈 Progress Log
+## Progress Log
 
 See `progress-log.md` for daily updates.

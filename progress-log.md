@@ -1,4 +1,4 @@
-# 📅 Progress Log
+# Progress Log
 
 ## Day 0
 
