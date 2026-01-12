@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+await mongoose.connect(process.env.MONGO_URI!);
 const userSchema = new mongoose.Schema(
   {
     name: {
@@ -26,25 +26,46 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const classSchema = new mongoose.Schema({
-  className: {
-    type: String,
+const classSchema = new mongoose.Schema(
+  {
+    className: {
+      type: String,
+      required: true,
+    },
+    teacherId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
+    studentIds: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
   },
-  teacherId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
-    required: true,
-  },
-  studentIds: [
-    {
-      type: [mongoose.Schema.Types.ObjectId],
+  { timestamps: true }
+);
+
+const attendanceSchema = new mongoose.Schema(
+  {
+    classId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Class",
+    },
+    studentId: {
+      type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
-  ],
-});
-
-const attendanceSchema = new mongoose.Schema({});
+    status: {
+      type: String,
+      enum: ["Present", "Absent"],
+    },
+  },
+  { timestamps: true }
+);
 
 const userModel = mongoose.model("User", userSchema);
 const classModel = mongoose.model("Class", classSchema);
-export { userModel, classModel };
+const attendanceModel = mongoose.model("Attendance", attendanceSchema);
+export { userModel, classModel, attendanceModel };
