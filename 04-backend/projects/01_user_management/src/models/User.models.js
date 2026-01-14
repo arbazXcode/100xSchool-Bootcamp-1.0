@@ -20,7 +20,12 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: [true, "Please enter your password."],
-    }
+    },
+    refreshToken: {
+        type: String,
+        required: true,
+        select: false
+    },
 }, { timestamps: true })
 
 userSchema.pre("save", async function () {
