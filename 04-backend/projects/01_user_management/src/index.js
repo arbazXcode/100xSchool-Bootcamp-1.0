@@ -1,9 +1,11 @@
 import express from "express"
 import cookieParser from "cookie-parser"
 import dotenv from "dotenv"
-import userRoutes from "./routes/auth.routes.js"
 
-dotenv.config({ path: "../.env" })
+import userRoutes from "./routes/auth.routes.js"
+import { connectDB } from "./config/db.js"
+
+dotenv.config()
 
 const app = express()
 const port = process.env.PORT || 4001
@@ -17,4 +19,5 @@ app.use("/api/v1/user", userRoutes);
 
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`)
+    connectDB()
 })
