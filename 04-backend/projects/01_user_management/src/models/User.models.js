@@ -5,7 +5,6 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, "Please enter first name."],
         trim: true,
-        unique: true,
     },
     lastName: {
         type: String,
@@ -15,19 +14,20 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, "Please enter email id."],
         lowercase: true,
-        trim: true
+        trim: true,
+        unique: true
     },
     password: {
         type: String,
         required: [true, "Please enter your password."],
-        trim: true
     }
 })
 
-userSchema.pre("save", async (next) => {
-    if (this.password(!isModified)) return next()
+userSchema.pre("save", async function (next) {
+    if (!isModified("password")) return next()
 
-    const hashedPassword = await bcrypt.hash(this.password, 10)
+    this.password = await bcrypt.hash(this.password, 10)
+    next()
 })
 
 const User = mongoose.model("User", userSchema)
