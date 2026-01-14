@@ -5,8 +5,8 @@ export const registerUser = async (req, res) => {
 
     try {
         //validations
-        if (!firstName || !lastName || !email || !password) {
-            return res.status(401).json({
+        if (!firstName || !email || !password) {
+            return res.status(409).json({
                 success: false,
                 message: "Invalid credentials."
             })
@@ -19,7 +19,34 @@ export const registerUser = async (req, res) => {
                 message: "User already exists."
             })
         }
+
+        const newUser = await User.create({
+            firstName,
+            lastName,
+            password,
+            email
+        })
+        if (!newUser) {
+            return res.status(401).json({
+                success: false,
+                message: "Error while creating user."
+            })
+        }
+
+        return res.status(201).json({
+            success: true,
+            message: "User created successfully",
+            data: {
+                id: newUser._id,
+                firstName,
+                email
+            }
+        })
     } catch (error) {
-        throw new Error("Internal server error: ", error)
+        console.error(error)
+        return res.status(500).json({
+            success: false,
+            message: "Internal server error."
+        })
     }
 }

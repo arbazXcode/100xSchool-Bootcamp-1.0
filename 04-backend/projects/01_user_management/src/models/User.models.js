@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, "Please enter your password."],
     }
-})
+}, { timestamps: true })
 
 userSchema.pre("save", async function (next) {
     if (!isModified("password")) return next()
