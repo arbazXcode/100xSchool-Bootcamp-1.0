@@ -75,7 +75,7 @@ export const loginUser = async (req, res) => {
         }
 
         //access token - short lived
-        const accessToken = jwt.sign({ userId: user._id },
+        const accessToken = jwt.sign({ userId: user._id, role: user.role },
             process.env.JWT_ACCESS_TOKEN,
             { expiresIn: '15m' }
         )
