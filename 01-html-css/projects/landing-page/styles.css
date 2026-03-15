@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+}
+.left {
+  width: 50%;
+  background-color: rgb(8, 7, 7);
+}
+.right {
+  width: 50%;
+}
+.top {
+  color: white;
+  font-size: 30px;
+  margin-top: 40px;
+}
+.heading {
+  color: white;
+  font-size: 40px;
+  margin-top: 40px;
+}
+
+.hero {
+  color: white;
+  margin-top: 24px;
+}
+.child1 {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.child2 {
+  display: flex;
+  margin-bottom: 20px;
+}
+.child3 {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.left-container {
+  margin-top: 35px;
+  margin-left: 55px;
+}
+.para {
+  padding-left: 5px;
+  font-size: 20px;
+}
+
+.para2 {
+  color: rgb(124, 122, 122);
+  margin-top: 70px;
+}

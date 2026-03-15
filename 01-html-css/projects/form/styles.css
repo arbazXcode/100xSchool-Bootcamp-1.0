@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.top {
+  margin-top: 70px;
+  text-align: center;
+}
+
+.bottom {
+  display: flex;
+  margin: 15px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.heading {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 20px;
+}
+.btn-google {
+  display: flex;
+  height: 40px;
+  width: 230px;
+  border: 1px solid #9ca3af;
+  border-radius: 10px;
+}
+
+.btn-google img {
+  height: 25px;
+  width: 23px;
+  margin: 8px;
+}
+.btn-google p {
+  font-size: 15px;
+  margin-top: 9px;
+  margin-left: 9px;
+  font-weight: 500;
+}
+
+.input-fields {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  height: 40px;
+  width: 250px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.submit {
+  height: 40px;
+  width: 240px;
+  border-radius: 10px;
+  font-size: 15px;
+  color: white;
+  background-color: #bec2c8;
+  margin-bottom: 20px;
+}
+
+.para {
+  font-size: 18px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 200px;
+}
