@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# macOS
+.DS_Store
+
+# Environment
+.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Optional npm cache
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Test/coverage
+coverage/
+
+# Build outputs
+dist/
+build/
+
+# Ignore nested course repos (they are separate git repositories)
+01-nodejs/
+
+# Ignore workspace artifacts
+projects/
